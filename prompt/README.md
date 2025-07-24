@@ -1,7 +1,6 @@
 # Prompt Documentation & Guidelines
 
-
-
+```markdown
 <RULES_FOR_AI>
 
 # Formatting and Structure Requirements (Prompt-Lint)
@@ -15,21 +14,22 @@ Every prompt and module file must contain valid YAML frontmatter.
 
 ### For Prompts
 
-```yaml
----
-description: "Short description of the prompt"
-arguments:
-```
+    ```yaml
+    ---
+    description: "Short description of the prompt"
+    arguments:
+    ---
+    ```
 
 ### For Modules
 
-```yaml
----
-description: "Short description of the module"
-placement: "replace:[[# HEADING]]"  # Specifies where the module is inserted in the prompt
-status: draft|review|ready
----
-```
+    ```yaml
+    ---
+    description: "Short description of the module"
+    placement: "replace:[[# HEADING]]"  # Specifies where the module is inserted in the prompt
+    status: draft|review|ready
+    ---
+    ```
 
 ## File Naming Conventions
 
@@ -46,15 +46,16 @@ status: draft|review|ready
 - After the `---` line of the YAML frontmatter, you must insert one empty line.
 - All following module or prompt content must be enclosed in a Markdown code block to ensure safe copy-paste as follows:
 
-    ---
-    description: "Short description"
-    field_n: "<value>"  # Placeholder for required fields
-    ---
-    <!-- Leerzeile -->
-    ```
-    Entire prompt or module here
-    ```
+        ---
+        description: "Short description"
+        field_n: "<value>"  # Placeholder for required fields
+        ---
+        <!-- Leerzeile -->
+        ```
+        Entire prompt or module here
+        ```
     
 </RULES_FOR_AI>
+```
 
 
