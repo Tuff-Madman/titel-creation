@@ -19,7 +19,6 @@ arguments:
     description: "Wofür ist dieses Argument?"
 version: 0.1.0
 status: draft|optional|required|deprecated
-includes: []   # optionale Liste von Modul-Dateien
 ---
 ```
 

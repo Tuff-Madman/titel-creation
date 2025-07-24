@@ -1,9 +1,13 @@
 ---
-desciption:
+description: "Generiert präzise H1-Titel für Möbelprodukte basierend auf Produktdaten und Bildern"
+arguments:
+
+status: draft
+
 ---
 
 
-YOUR GOAL IS TO CRAFT ONE LINE THAT CLEARLY IDENTIFIES THE Produkt, surfaces the main keyword early, highlights genuine benefits, and remains friendly to search engines. Keep customer value in mind as background context.
+YOUR GOAL IS TO CRAFT ONE LINE THAT CLEARLY IDENTIFIES the Produkt, surfaces the main keyword early, highlights genuine benefits, and remains friendly to search engines. Keep customer value in mind as background context.
 
 
 YOU RECEIVE  
@@ -14,7 +18,7 @@ YOU RECEIVE
 KEY COMPONENTS OF AN EFFECTIVE FURNITURE H1  
 - Titles should be informative, easy to scan, and free from filler words or redundancy  
 - Surface the main keyword early, highlight genuine benefits, and remain friendly to search engines  
-- Immediate Produkt clarity for users & Google  
+- Immediate product clarity for users & Google  
 - Main search keyword (Produkt-Typ) placed early  
 - High-value attributes: Marke, Größe, Farbe, Material, Stil, Feature  
 - Natural, hype-free wording; avoid keyword stuffing  
@@ -22,7 +26,7 @@ KEY COMPONENTS OF AN EFFECTIVE FURNITURE H1
 
 
 # TITLE CREATION INSTRUCTIONS
-Create titles that are naturally derived from the most important Merkmale and Attribute, so that they appear logical to German furniture shoppers. Follow the guidelines and Attribute-Priorität below to achieve consistent, clear, and SEO-friendly results.
+Create titles that are naturally derived from the most important Merkmale and Attributes, so that they appear logical to German furniture shoppers. Follow the guidelines and Attribute-Priorität below to achieve consistent, clear, and SEO-friendly results.
 
 
 ## GUIDELINES
@@ -34,7 +38,7 @@ Structure heuristic based on available entities:
 - If Serie/Produktname is missing: ... skip to the next relevant key attribute ...
 - If Farbe is missing: ... end without hyphen separator
 
-• Include the Produkt-Typ if a Marke is originally present, immediately after the Marke  
+• Include the Produkt-Typ if a Marke is originally present, immediately after it  
 • Include the Produktname/Serie if a Marke is present, directly after the Produkt-Typ where possible  
 • Farben should always appear at the end, separated by a hyphen  
 
@@ -50,11 +54,11 @@ Note: You will find further details and examples in the respective sections belo
 
 
 ## Ambiguity and Conflict Resolution for Product Information
-It may occur that information between Produkt factsheet attribute data and visual image information is contradictory, confusing, or ambiguous. Only if title-essential information conflicts between sources, prioritize the source that provides objectively correct and logically consistent Produkt characteristics.
+It may occur that information between the Produkt factsheet attribute data and visual image information is contradictory, confusing, or ambiguous. Only if title-essential information conflicts between sources, prioritize the source that provides objectively correct and logically consistent Produkt characteristics.
 
 If a higher-priority entity is missing, move to the next one **that makes sense**.  
 
-Visual evidence from attached images should:
+Visual evidence from the attached images should:
 - Take precedence for form, shape, and design elements when absolute certainty exists about visual characteristics
 - Be used for supplementary corrective interpretation when high confidence can be established
 - Apply only according to the specific scenarios listed below:
@@ -70,18 +74,18 @@ REMEMBER: Return exactly one line in correct German: the finished H1 Titel.
 # CONSTRAINTS  
 • Collapse multiple spaces; avoid trailing punctuation  
 • Only include information that is clearly evident from the inputs—no hallucination  
-• Der Titel muss zwischen 50 und 55 Zeichen lang sein (niemals mehr als 60 Zeichen; harte Obergrenze).  
+• The title must be between 50 and 55 characters long (never more than 60 characters; hard limit).  
 • Never output "null" or placeholders.  
-• Include only Attribute that can be clearly derived from the Produkt image or data.
+• Include only attributes that can be clearly derived from the Produkt image or data.
 
 
 # EXAMPLES AND REFERENCES
 
 ## EXAMPLES
-```markdown
 <!-- 
 Each of following XML tags contains a complete input-output pair and rationale for a specific Produkt Titel. The description attribute in the XML tag describes the specific example case.
 -->
+
 <schlafzimmer_bett description="Ambiguity resolution – handling unclear Produkt specifications with fallback logic">
 
 **Product Fact Sheet Input:**
