@@ -47,6 +47,13 @@ version: 0.1.0
 - **Version bump** bei jeder Änderung
 - **Breaking Changes** explizit markieren
 
+### Naming-Konventionen
+- **Prompt-Dateien**: immer kleingeschrieben, enden auf `.prompt.md`
+  - Beispiel: `title-generation.prompt.md`
+- **Modul-Dateien**: immer kleingeschrieben, enden auf `-modul.prompt.md`
+  - Beispiel: `seo-optimization-modul.prompt.md`
+  - Beispiel: `scoring-system-modul.prompt.md`
+
 ### Sprach- & Formatregeln
 - **Keine gemischten Sprachen** innerhalb einer Datei
 - **Argumente vollständig dokumentieren** (keine „magischen Defaults")
@@ -79,7 +86,7 @@ version: 0.1.0
 ### Einbindung
 Module werden über das `includes`-Array im Prompt-Frontmatter referenziert:
 ```yaml
-includes: ["title-scoring.module.md", "seo-optimization.module.md"]
+includes: ["scoring-system-modul.prompt.md", "seo-optimization-modul.prompt.md"]
 ```
 
 ### Platzierung
@@ -112,5 +119,4 @@ Das `placement`-Feld definiert, wo das Modul eingefügt wird:
 **TBD/Offen:**
 - Exakte `placement`-Syntax für komplexere Fälle
 - Automatisierung via `.cursorrules` / `.prompt-lint.yaml`
-- Naming-Konvention für Module
 - PR-Template & CI-Integration
