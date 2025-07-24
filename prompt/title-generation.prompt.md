@@ -1,112 +1,124 @@
 ---
-description: "Generiert klickstarke Titel für verschiedene Content-Formate"
-arguments:
-  - name: target_length
-    type: integer
-    required: false
-    default: 60
-    description: "Maximale Zeichenzahl für den Titel"
-  - name: content_type
-    type: string
-    required: false
-    default: "blog"
-    description: "Art des Contents (blog, video, social, email, etc.)"
-  - name: target_audience
-    type: string
-    required: false
-    default: null
-    description: "Zielgruppe für den Content"
-version: 0.1.0
-status: draft
-includes: []
+desciption:
 ---
 
-## Details
 
-Dieser Prompt wurde entwickelt, um ansprechende und klickstarke Titel für verschiedene Content-Formate zu generieren. Der Prompt berücksichtigt dabei sowohl SEO-Aspekte als auch psychologische Trigger, die zur Erhöhung der Click-Through-Rate beitragen.
+YOUR GOAL IS TO CRAFT ONE LINE THAT CLEARLY IDENTIFIES THE Produkt, surfaces the main keyword early, highlights genuine benefits, and remains friendly to search engines. Keep customer value in mind as background context.
 
-**Funktionsweise:**
-- Analysiert den bereitgestellten Content oder die Beschreibung
-- Berücksichtigt die Zielgruppe und den Content-Typ
-- Generiert mehrere Titel-Varianten mit unterschiedlichen Ansätzen
-- Bewertet die Titel nach verschiedenen Kriterien
 
-**Einsatzgebiete:**
-- Blog-Artikel und Website-Content
-- Social Media Posts
-- Video-Titel (YouTube, etc.)
-- E-Mail-Betreffzeilen
-- Werbeanzeigen
+YOU RECEIVE  
+<PRODUCT_FACTSHEET>{{Produkt FACTSHEET}}</PRODUCT_FACTSHEET>  
+<PRODUCT_ATTACHMENT>{{IMAGE ATTACHMENT}}</PRODUCT_ATTACHMENT>  
 
-## Prompt (lesbare Version)
 
-### Kontext
-Du bist ein erfahrener Content-Marketing-Experte, spezialisiert auf die Erstellung von ansprechenden Titeln, die hohe Click-Through-Raten erzielen.
+KEY COMPONENTS OF AN EFFECTIVE FURNITURE H1  
+- Titles should be informative, easy to scan, and free from filler words or redundancy  
+- Surface the main keyword early, highlight genuine benefits, and remain friendly to search engines  
+- Immediate Produkt clarity for users & Google  
+- Main search keyword (Produkt-Typ) placed early  
+- High-value attributes: Marke, Größe, Farbe, Material, Stil, Feature  
+- Natural, hype-free wording; avoid keyword stuffing  
+- Titel-Länge: zwischen 50 und 55 Zeichen (harte Obergrenze: maximal 60 Zeichen)
 
-### Rollen
-- **Titel-Experte**: Entwickelst kreative und wirkungsvolle Headlines
-- **SEO-Spezialist**: Berücksichtigst Suchmaschinenoptimierung
-- **Psychologie-Kenner**: Verstehst, was Menschen zum Klicken motiviert
 
-### Regeln
-1. Titel müssen prägnant und aussagekräftig sein
-2. Berücksichtige die angegebene Zeichenbegrenzung
-3. Verwende emotionale Trigger (Neugier, Nutzen, Dringlichkeit)
-4. Vermeide Clickbait - der Titel muss den Inhalt korrekt widerspiegeln
-5. Optimiere für die spezifische Plattform/den Content-Typ
+# TITLE CREATION INSTRUCTIONS
+Create titles that are naturally derived from the most important Merkmale and Attribute, so that they appear logical to German furniture shoppers. Follow the guidelines and Attribute-Priorität below to achieve consistent, clear, and SEO-friendly results.
 
-### Schritte
-1. **Analyse**: Verstehe den Content und die Zielgruppe
-2. **Brainstorming**: Entwickle 5-7 verschiedene Titel-Ansätze
-3. **Optimierung**: Verfeinere die besten Titel
-4. **Bewertung**: Bewerte jeden Titel nach festgelegten Kriterien
-5. **Empfehlung**: Gib eine begründete Empfehlung ab
 
-### Output-Check
-- [ ] Alle Titel halten die Zeichenbegrenzung ein
-- [ ] Mindestens 3 verschiedene Ansätze wurden verwendet
-- [ ] Jeder Titel hat eine Bewertung und Begründung
-- [ ] Eine klare Empfehlung wurde ausgesprochen
-- [ ] Der beste Titel ist für die Zielgruppe optimiert
+## GUIDELINES
 
-## Prompt (Copy/Paste Codeblock)
+Structure heuristic based on available entities:
+- If Marke + Produkt-Typ + Serie present: Marke Produkt-Typ Serie ... - Farbe
+- If Marke + Produkt-Typ present: Marke Produkt-Typ ... - Farbe  
+- If only Produkt-Typ present: Produkt-Typ ... - Farbe
+- If Serie/Produktname is missing: ... skip to the next relevant key attribute ...
+- If Farbe is missing: ... end without hyphen separator
 
-```text
-Du bist ein erfahrener Content-Marketing-Experte, spezialisiert auf die Erstellung von ansprechenden Titeln, die hohe Click-Through-Raten erzielen.
+• Include the Produkt-Typ if a Marke is originally present, immediately after the Marke  
+• Include the Produktname/Serie if a Marke is present, directly after the Produkt-Typ where possible  
+• Farben should always appear at the end, separated by a hyphen  
 
-KONTEXT:
-- Content-Typ: {content_type}
-- Zielgruppe: {target_audience} 
-- Maximale Länge: {target_length} Zeichen
-- Zu betitelnder Content: [CONTENT_BESCHREIBUNG]
 
-AUFGABE:
-Entwickle 5-7 verschiedene Titel-Varianten, die folgende Kriterien erfüllen:
+### ATTRIBUTE-PRIORITÄT  
 
-REGELN:
-1. Titel müssen prägnant und aussagekräftig sein
-2. Halte die Zeichenbegrenzung von {target_length} Zeichen ein
-3. Verwende emotionale Trigger (Neugier, Nutzen, Dringlichkeit)
-4. Vermeide Clickbait - der Titel muss den Inhalt korrekt widerspiegeln
-5. Optimiere für die spezifische Plattform/den Content-Typ
+USE WHEN CONFIDENTLY PRESENT (GUIDELINE, NOT STRICT)  
+1 Marke 2 Produkt-Typ 3 Serie/Modell 4 Setgröße/Konfiguration  
+5 Maße 6 Material 7 Farbe (" / " for two colors; if >2, keep the main color)  
+8 Besonderes Feature/Oberfläche  
 
-VERSCHIEDENE ANSÄTZE:
-- Nutzen-orientiert (Welchen Vorteil bietet der Content?)
-- Problem-lösend (Welches Problem wird gelöst?)
-- Neugier-weckend (Was macht den Leser neugierig?)
-- Zahlen/Listen ("5 Wege zu...", "Die ultimative Anleitung...")
-- Fragen ("Wie...", "Warum...", "Was...")
-- Dringlichkeit ("Jetzt", "Sofort", "Bevor es zu spät ist")
+Note: You will find further details and examples in the respective sections below.
 
-OUTPUT-FORMAT:
-Für jeden Titel:
-1. **Titel**: [Der Titel selbst]
-2. **Ansatz**: [Welcher Ansatz wurde verwendet]
-3. **Länge**: [Zeichenanzahl]
-4. **Bewertung**: [1-10 Punkte mit Begründung]
 
-FINALE EMPFEHLUNG:
-- **Bester Titel**: [Titel]
-- **Begründung**: [Warum ist dieser am besten geeignet?]
-- **Alternative**: [Zweitbester Titel als Backup]
-```
+## Ambiguity and Conflict Resolution for Product Information
+It may occur that information between Produkt factsheet attribute data and visual image information is contradictory, confusing, or ambiguous. Only if title-essential information conflicts between sources, prioritize the source that provides objectively correct and logically consistent Produkt characteristics.
+
+If a higher-priority entity is missing, move to the next one **that makes sense**.  
+
+Visual evidence from attached images should:
+- Take precedence for form, shape, and design elements when absolute certainty exists about visual characteristics
+- Be used for supplementary corrective interpretation when high confidence can be established
+- Apply only according to the specific scenarios listed below:
+
+
+### SCENARIOS
+
+Round vs. Rectangular Data: IF visual shows round table BUT factsheet provides only Höhe [H] cm, Breite [B] cm (no Durchmesser):
+→ Transform using max(H, B) as Durchmesser
+
+REMEMBER: Return exactly one line in correct German: the finished H1 Titel.
+
+# CONSTRAINTS  
+• Collapse multiple spaces; avoid trailing punctuation  
+• Only include information that is clearly evident from the inputs—no hallucination  
+• Der Titel muss zwischen 50 und 55 Zeichen lang sein (niemals mehr als 60 Zeichen; harte Obergrenze).  
+• Never output "null" or placeholders.  
+• Include only Attribute that can be clearly derived from the Produkt image or data.
+
+
+# EXAMPLES AND REFERENCES
+
+## EXAMPLES
+```markdown
+<!-- 
+Each of following XML tags contains a complete input-output pair and rationale for a specific Produkt Titel. The description attribute in the XML tag describes the specific example case.
+-->
+<schlafzimmer_bett description="Ambiguity resolution – handling unclear Produkt specifications with fallback logic">
+
+**Product Fact Sheet Input:**
+[Placeholder for Produkt data]
+
+**Titel Output:**
+"Placeholder for H1 Titel"
+
+**Rationale:**
+[Placeholder for reasoning behind Titel construction]
+
+</schlafzimmer_bett>
+
+
+<wohnzimmer_sofa description="Optimal structure – complete attribute set with proper Marke-Typ-Serie ordering">
+
+**Input Attribute:**
+[Placeholder for Produkt data]
+
+**Generated Titel:**
+[Placeholder for H1 Titel]
+
+**Rationale:**
+[Placeholder for reasoning behind Titel construction]
+
+</wohnzimmer_sofa>
+
+
+## HOW GOOD TITLES LOOK LIKE
+
+- 'Placeholder for well-structured H1 Titel' (kurze Begründung, warum das example as good)
+- 'Weitere Beispiel für guten H1-Titel' (other brief rationale)
+
+
+## HOW A BAD TITLE LOOKS LIKE
+
+- 'Placeholder for poor H1 Titel' (kurze Begründung, warum das example as bad)
+- 'Schlechtes Beispiel für H1-Titel' (further possible rationale)
+
+

@@ -3,9 +3,11 @@
 ## Formatvorgaben („Prompt-Lint")
 
 ### Pflicht-Frontmatter
+
 Jede Prompt- und Modul-Datei muss valides YAML-Frontmatter enthalten:
 
 **Für Prompts:**
+
 ```yaml
 ---
 description: "Kurzbeschreibung des Prompts"
@@ -22,6 +24,7 @@ includes: []   # optionale Liste von Modul-Dateien
 ```
 
 **Für Module:**
+
 ```yaml
 ---
 description: "Kurzbeschreibung des Moduls"
@@ -34,20 +37,24 @@ version: 0.1.0
 ### Struktur-Anforderungen
 
 #### Prompt-Dateien
+
 - **Klare Sections**: `Kontext`, `Rollen`, `Regeln`, `Schritte`, `Output-Check` (konsistente Überschriften)
 - **Details-Block** nach Frontmatter
 - **Doppelung**: Prompt sowohl lesbar als auch als Copy/Paste-Codeblock
 
 #### Modul-Dateien
+
 - **Details-Block** nach Frontmatter
 - **Modul-Inhalt** sowohl lesbar als auch als Copy/Paste-Codeblock
 
 ### Versionierung
+
 - **Explizite SemVer-Versionierung** (0.1.0, 1.0.0, etc.)
 - **Version bump** bei jeder Änderung
 - **Breaking Changes** explizit markieren
 
 ### Naming-Konventionen
+
 - **Prompt-Dateien**: immer kleingeschrieben, enden auf `.prompt.md`
   - Beispiel: `title-generation.prompt.md`
 - **Modul-Dateien**: immer kleingeschrieben, enden auf `-modul.prompt.md`
@@ -55,6 +62,7 @@ version: 0.1.0
   - Beispiel: `scoring-system-modul.prompt.md`
 
 ### Sprach- & Formatregeln
+
 - **Keine gemischten Sprachen** innerhalb einer Datei
 - **Argumente vollständig dokumentieren** (keine „magischen Defaults")
 - **Includes müssen eindeutig sein**
@@ -62,18 +70,21 @@ version: 0.1.0
 ## Änderungs-Workflow
 
 ### Branch-Konventionen
+
 - `feature/prompt-name` für neue Prompts
 - `feature/module-name` für neue Module  
 - `fix/issue-description` für Bugfixes
 - `docs/update-description` für Dokumentation
 
 ### Commit-Konventionen
+
 - `feat: add new title-generation prompt`
 - `fix: correct placement syntax in module`
 - `docs: update README with new guidelines`
 - `chore: bump version to 1.0.0`
 
 ### Manuelle Checkliste vor PR
+
 - [ ] Frontmatter ist valides YAML
 - [ ] Version wurde erhöht
 - [ ] Breaking Changes dokumentiert
@@ -84,30 +95,37 @@ version: 0.1.0
 ## Modul-Handling
 
 ### Einbindung
+
 Module werden über das `includes`-Array im Prompt-Frontmatter referenziert:
+
 ```yaml
 includes: ["scoring-system-modul.prompt.md", "seo-optimization-modul.prompt.md"]
 ```
 
 ### Platzierung
+
 Das `placement`-Feld definiert, wo das Modul eingefügt wird:
+
 - `prepend`: Am Anfang des Prompts
 - `append`: Am Ende des Prompts  
 - `after:<section>`: Nach einer bestimmten Section
 - `replace:<selector>`: Ersetzt einen bestimmten Bereich
 - `line:<n>`: An einer bestimmten Zeilennummer
 
-### Versionierung
+### Modul-Versionierung
+
 - Module haben eigene Versionen
 - **TBD**: Kompatibilitätsmatrix zwischen Prompt- und Modul-Versionen
 
 ## Status-Taxonomie
+
 - `draft`: In Entwicklung, nicht produktionsreif
 - `optional`: Kann verwendet werden, aber nicht erforderlich
 - `required`: Muss verwendet werden
 - `deprecated`: Veraltet, wird entfernt
 
 ## Argument-Typen
+
 - `string`: Textuelle Eingabe
 - `integer`: Ganzzahl
 - `boolean`: true/false Werte
@@ -117,6 +135,7 @@ Das `placement`-Feld definiert, wo das Modul eingefügt wird:
 ---
 
 **TBD/Offen:**
+
 - Exakte `placement`-Syntax für komplexere Fälle
 - Automatisierung via `.cursorrules` / `.prompt-lint.yaml`
 - PR-Template & CI-Integration
