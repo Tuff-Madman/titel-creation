@@ -1,6 +1,21 @@
-# Prompt Documentation & Guidelines
-
 ```markdown
+# Prompt Dokumentation & Richtlinien
+
+Der Haupt-Prompt für die Titelerstellung befindet sich in der Datei `01-title_generation.prompt.md`. Dieser Prompt enthält vordefinierte Platzhalter, in die zusätzliche Module eingefügt werden können.
+
+
+### 📋 Prompt kopieren
+Für niedersetzliche Verwendung einfach den kompletten Prompt Code Block kopieren und in Content-Serve in das Prompt-Eingabefeld einfügen. 
+
+### 3. 🧩  Anpassungen vornehmen
+Möchte ich zum Beispiel jetzt die Examples und Referenzen, diesen Abschnitt einfügen, kopiere ich, gehe ich einfach auf die Date (hier linke ifügen) und kopiere den Code-Block in die entsprechende Stelle des Promptes, die hier gekennzeichnet ist mit [[## EXAMPLES AND REFERENCES]]
+```
+
+---
+
+
+
+```
 <RULES_FOR_AI>
 
 # Formatting and Structure Requirements (Prompt-Lint)
